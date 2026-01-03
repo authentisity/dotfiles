@@ -26,7 +26,7 @@
     },
 
     "custom/language": {
-    	"exec": "./scripts/ime.sh",
+    	"exec": "~/.config/waybar/scripts/ime.sh",
    	"return-type": "json",
     	"format": "{}",
     	"tooltip": false,
@@ -60,7 +60,7 @@
         	"phone": "",
         	"portable": "",
         	"car": "",
-        	"default": ["󰕿", "󰖀", "󰕾"]
+        	"default": ["󰕿", "󰖀", "󰕾", "󰕾"]
     	},
 
 	"states": {

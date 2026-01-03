@@ -279,7 +279,6 @@ spawn-at-startup "awww img ~/.local/share/backgrounds/Wallpaper.jpg"
 
 spawn-at-startup "swayidle" "-w" \
     "timeout" "600" "hyprlock" \
-    "before-sleep" "hyprlock"
     // "timeout" "900" "systemctl suspend" \
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
