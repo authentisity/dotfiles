@@ -1,17 +1,12 @@
 {
+    "include": "~/.config/waybar/modules.jsonc",
+    "style": "~/.config/waybar/style.css",
+
     "layer": "top",
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["battery", "clock"],
-    "sway/window": {
-        "max-length": 50
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
-    },
-    "reload_style_on_change": true
+    "modules-left": ["custom/launcher", "niri/workspaces", "custom/cava"],
+    "modules-center": [],
+    "modules-right": ["custom/language", "memory", "cpu", "temperature", "pulseaudio", "clock"],
+    
+    "margin": "5",
+    "spacing": 10
 }
