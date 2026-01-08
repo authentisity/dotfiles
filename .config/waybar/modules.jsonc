@@ -33,12 +33,17 @@
     	"on-click": "fcitx5-remote -t"
     },
 
-    "memory": {
-    	"format": "󰘚 {: >3}%",
-    	"on-click": "neohtop"
+    "group/hardware": {
+	"orientation": "horizontal",
+	"modules": [
+		"cpu",
+		"temperature",
+		"memory"
+	]
     },
+
     "cpu": {
-   	"format": "󰍛 {usage: >3}%",
+   	"format": " 󰍛{usage: >3}% ",
     	"on-click": "neohtop"
     },
     "temperature": {
@@ -46,6 +51,10 @@
     	"critical-threshold": 80,
     	"format": " {temperatureC}°C",
 	"on-click": "neohtop"
+    },
+    "memory": {
+    	"format": " 󰘚{: >3}% ",
+    	"on-click": "neohtop"
     },
 
     "pulseaudio": {
@@ -79,5 +88,60 @@
         "format": "{:%a %b %d | %H:%M:%S}",
 	"format-alt": "{:%H:%M}",
 	"tooltip": "false"
+   },
+    "custom/notification": {
+   	"tooltip": true,
+    	"format": "{icon}",
+    	"format-icons": {
+    		"notification": "󱅫",
+      		"none": "󰂜",
+      		"dnd-notification": "󰂠",
+      	"dnd-none": "󰪓",
+      	"inhibited-notification": "󰂛",
+      	"inhibited-none": "󰪑",
+      	"dnd-inhibited-notification": "󰂛",
+      	"dnd-inhibited-none": "󰪑"
+    	},
+    	"return-type": "json",
+    	"exec-if": "which swaync-client",
+    	"exec": "swaync-client -swb",
+    	"on-click": "swaync-client -t -sw",
+   	"on-click-right": "swaync-client -d -sw",
+    	"escape": true
+    },
+
+    "group/power": {
+    	"orientation": "vertical",
+        "drawer": {
+            "transition-duration": 250,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        },
+        "modules": [
+	    "custom/power",
+            "custom/lock",
+            "custom/reboot",
+            "custom/shutdown"
+        ]
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+    "custom/lock": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+    "custom/reboot": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "systemctl reboot"
+    },
+    "custom/shutdown": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "systemctl poweroff"
     }
 }

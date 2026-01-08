@@ -21,6 +21,7 @@ window#waybar {
 	padding-bottom: 0;
 	border: 2px transparent solid;
 	background: rgba(0, 0, 0, 0.4);
+	transition: 0.15s;
 }
 
 #custom-launcher:hover {
@@ -65,19 +66,17 @@ window#waybar {
 	padding-right: 17px;
 }
 
-#memory {
-	padding: 5px 15px;
+#hardware {
+	padding: 0;
 	background: rgba(0, 0, 0, 0.4);
 }
 
-#cpu {
-	padding: 5px 15px;
-	background: rgba(0, 0, 0, 0.4);
-}
-
-#temperature {
-	padding: 5px 15px;
-	background: rgba(0, 0, 0, 0.4);
+#hardware * {
+	margin: 0;
+	padding: 0 5px;
+	background: transparent; 
+	border: none;
+	border-radius: 0;
 }
 
 #pulseaudio {
@@ -88,4 +87,15 @@ window#waybar {
 #clock {
 	background: rgba(0, 0, 0, 0.4);
 	padding: 5px 15px;
+}
+
+#custom-notification {
+	background: rgba(0, 0, 0, 0.4);
+	padding: 0 13px;
+	transition: 0.15s;
+	border: 2px transparent solid;
+}
+
+#custom-notification:hover {
+	border-color: @lilac;
 }

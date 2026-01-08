@@ -270,7 +270,9 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+spawn-at-startup "waybar" "-c" "~/.config/waybar/config.jsonc"
+
+spawn-at-startup "swaync"
 
 spawn-at-startup "fcitx5" "-d"
 
@@ -279,8 +281,10 @@ spawn-at-startup "awww img ~/.local/share/backgrounds/Wallpaper.jpg"
 
 spawn-at-startup "swayidle" "-w" \
     "timeout" "600" "hyprlock" \
-    // "timeout" "900" "systemctl suspend" \
+    "timeout" "630" "niri msg action power-off-monitors" \
+    "resume" "niri msg action power-on-monitors"
 
+    
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -353,8 +357,11 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 5
+    geometry-corner-radius 10
     clip-to-geometry true
+
+    // Custom
+    draw-border-with-background false
 }
 
 binds {
@@ -373,12 +380,12 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
+    Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
     
     // Custom 
     Mod+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
-    Mod+E hotkey-overlay-title="Open a Browser: Floorp" { spawn "floorp"; }
+    Mod+E hotkey-overlay-title="Open a Browser: floorp" { spawn "floorp"; }
 
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.

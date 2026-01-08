@@ -5,8 +5,8 @@
     "layer": "top",
     "modules-left": ["custom/launcher", "niri/workspaces", "custom/cava"],
     "modules-center": [],
-    "modules-right": ["custom/language", "memory", "cpu", "temperature", "pulseaudio", "clock"],
+    "modules-right": ["custom/language", "group/hardware", "pulseaudio", "clock", "custom/notification"],
     
     "margin": "5",
-    "spacing": 10
+    "spacing": 7
 }
