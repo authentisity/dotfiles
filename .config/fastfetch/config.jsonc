@@ -1,37 +1,171 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  
+  "display": {
+      "separator": "",
+
+      "percent": {
+	 "type": 9,
+         "color": {
+	    "green": "bright_green",
+            "yellow": "bright_yellow",
+            "red": "bright_red"
+         }
+      },
+
+      "temp": {
+         "color": {
+	    "green": "bright_green",
+            "yellow": "bright_yellow",
+            "red": "bright_red"
+         }
+      }
+  },
+
+
   "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    "font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-    "swap",
-    "disk",
-    "localip",
-    "battery",
-    "poweradapter",
-    "locale",
-    "break",
-    "colors"
+    {
+        "type": "custom",
+        "format": "\u001b[37m┌───────────────────────Hardware───────────────────────┐"
+    },
+    {
+        "type": "host",
+        "key": "│ Host\t ",
+        "keyColor": "green"
+    },
+    {
+        "type": "cpu",
+        "key": "│ CPU\t ",
+        "keyColor": "green",
+	"temp": true
+    },
+    {
+        "type": "gpu",
+        "key": "│ GPU\t ",
+        "keyColor": "green",
+	"temp": true
+    },
+    {
+        "type": "memory",
+        "key": "│ Memory\t ",
+        "keyColor": "green"
+    },
+    {
+        "type": "disk",
+        "key": "│ Disk\t ",
+        "keyColor": "green"
+    },
+    {
+        "type": "display",
+        "key": "│ Display\t ",
+        "keyColor": "green"
+    },
+    {
+        "type": "sound",
+        "key": "│ Audio\t ",
+        "keyColor": "green"
+    },
+
+    {
+        "type": "custom",
+        "format": "\u001b[37m└──────────────────────────────────────────────────────┘"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[37m┌────────────────────────System────────────────────────┐"
+    },
+    {
+	"type": "os",
+    	"key": "│ OS\t  ",
+        "keyColor": "yellow"
+    },
+    {
+        "type": "kernel",
+        "key": "│ Kernel\t  ",
+        "keyColor": "yellow"
+    },
+    {
+        "type": "packages",
+        "key": "│ Packages  ",
+        "keyColor": "yellow"
+    },
+    {
+        "type": "processes",
+        "key": "│ Processes ",
+        "keyColor": "yellow"
+    },
+    {
+        "type": "uptime",
+        "key": "│ Uptime\t  ",
+        "keyColor": "yellow"
+    },
+    {
+        "type": "command",
+        "key": "│ OS Age\t  ",
+        "keyColor": "yellow",
+	"text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[37m└──────────────────────────────────────────────────────┘"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[37m┌───────────────────────Software───────────────────────┐"
+    },
+    {
+        "type": "de",
+        "key": "│ DE\t  ",
+        "keyColor": "red"
+    },
+    {
+        "type": "wm",
+        "key": "│ WM\t  ",
+        "keyColor": "red"
+    },
+    {
+        "type": "terminal",
+        "key": "│ Terminal  ",
+        "keyColor": "red"
+    },
+    {
+        "type": "terminalfont",
+        "key": "│ Font\t  ",
+        "keyColor": "red"
+    },
+    {
+        "type": "shell",
+        "key": "│ Shell\t  ",
+        "keyColor": "red"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[37m└──────────────────────────────────────────────────────┘"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[37m┌─────────────────────────Misc─────────────────────────┐"
+    },
+    {
+        "type": "datetime",
+        "key": "│ Time\t  ",
+        "keyColor": "magenta"
+    },
+    {
+        "type": "dns",
+        "key": "│ DNS\t  ",
+        "keyColor": "magenta"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[37m└──────────────────────────────────────────────────────┘"
+    },
+    {
+	"type": "colors",
+	"symbol": "circle"
+    }
   ],
   "logo": {
-	"source":
-	  "~/.config/fastfetch/banner.txt"}
+	"source": "~/.config/fastfetch/banner.txt"
+  }
 }

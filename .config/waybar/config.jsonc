@@ -5,7 +5,7 @@
     "layer": "top",
     "modules-left": ["custom/launcher", "niri/workspaces", "custom/cava"],
     "modules-center": [],
-    "modules-right": ["custom/language", "group/hardware", "pulseaudio", "clock", "custom/notification"],
+    "modules-right": ["custom/language", "group/hardware", "pulseaudio", "clock", "custom/notification", "group/power"],
     
     "margin": "5",
     "spacing": 7
