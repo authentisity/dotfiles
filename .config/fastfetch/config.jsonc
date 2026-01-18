@@ -76,12 +76,12 @@
     },
     {
 	"type": "os",
-    	"key": "│ OS\t  ",
+    	"key": "│ OS\t ",
         "keyColor": "yellow"
     },
     {
         "type": "kernel",
-        "key": "│ Kernel\t  ",
+        "key": "│ Kernel\t ",
         "keyColor": "yellow"
     },
     {
@@ -96,12 +96,12 @@
     },
     {
         "type": "uptime",
-        "key": "│ Uptime\t  ",
+        "key": "│ Uptime\t ",
         "keyColor": "yellow"
     },
     {
         "type": "command",
-        "key": "│ OS Age\t  ",
+        "key": "│ OS Age\t ",
         "keyColor": "yellow",
 	"text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
     },
@@ -115,12 +115,12 @@
     },
     {
         "type": "de",
-        "key": "│ DE\t  ",
+        "key": "│ DE\t ",
         "keyColor": "red"
     },
     {
         "type": "wm",
-        "key": "│ WM\t  ",
+        "key": "│ WM\t ",
         "keyColor": "red"
     },
     {
@@ -130,12 +130,12 @@
     },
     {
         "type": "terminalfont",
-        "key": "│ Font\t  ",
+        "key": "│ Font\t ",
         "keyColor": "red"
     },
     {
         "type": "shell",
-        "key": "│ Shell\t  ",
+        "key": "│ Shell\t ",
         "keyColor": "red"
     },
     {
@@ -148,12 +148,12 @@
     },
     {
         "type": "datetime",
-        "key": "│ Time\t  ",
+        "key": "│ Time\t ",
         "keyColor": "magenta"
     },
     {
         "type": "dns",
-        "key": "│ DNS\t  ",
+        "key": "│ DNS\t ",
         "keyColor": "magenta"
     },
     {

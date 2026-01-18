@@ -270,19 +270,17 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar" "-c" "~/.config/waybar/config.jsonc"
-
+spawn-at-startup "waybar"
 spawn-at-startup "swaync"
-
 spawn-at-startup "fcitx5" "-d"
-
 spawn-at-startup "awww-daemon"
 spawn-at-startup "awww img ~/.local/share/backgrounds/Wallpaper.jpg"
 
-spawn-at-startup "swayidle" "-w" \
-    "timeout" "600" "hyprlock" \
-    "timeout" "630" "niri msg action power-off-monitors" 
-
+spawn-at-startup "swayidle" \
+    		 "timeout 600 hyprlock" \
+    		 "timeout 630 niri msg action power-off-monitors" \
+             "resume niri msg action power-on-monitors" \
+             "before-sleep hyprlock"
     
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
