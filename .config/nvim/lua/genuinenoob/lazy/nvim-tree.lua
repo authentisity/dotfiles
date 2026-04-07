@@ -21,7 +21,6 @@ return {
  
         require("nvim-tree").setup({
             hijack_cursor = true,
-            focus_empty_on_setup = true,
             sync_root_with_cwd = true,
 
             sort = {

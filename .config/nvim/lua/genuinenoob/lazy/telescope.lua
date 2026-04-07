@@ -17,7 +17,7 @@ return {
         local telescope = require('telescope')
         local actions = require('telescope.actions')
 
-        local ignore_patterns_list = {".git", "node_modules", "venv", "__pycache__", "%.xlsx", "%.jpg", "%.png", "%.webp",
+        local ignore_patterns_list = {"node_modules", "venv", "__pycache__", "%.xlsx", "%.jpg", "%.png", "%.webp",
     "%.pdf", "%.odt", "%.ico"}
 
         require('telescope').setup{
@@ -42,7 +42,6 @@ return {
                     hidden = true,
                 },
                 live_grep = {
-                    find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
                     layout_config = {
                         preview_width = 0,
                     }

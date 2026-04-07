@@ -51,6 +51,11 @@
         "keyColor": "green"
     },
     {
+        "type": "swap",
+        "key": "│ Swap\t ",
+        "keyColor": "green"
+    },
+    {
         "type": "disk",
         "key": "│ Disk\t ",
         "keyColor": "green"
